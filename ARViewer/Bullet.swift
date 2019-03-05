@@ -13,9 +13,9 @@ import SceneKit
 class Bullet: SCNNode {
     override init () {
         super.init()
-        let sphere = SCNSphere(radius: 0.025)
-        self.geometry = sphere
-        let shape = SCNPhysicsShape(geometry: sphere, options: nil)
+        let box = SCNBox(width: 0.025, height: 0.025, length: 0.025, chamferRadius: 0)
+        self.geometry = box
+        let shape = SCNPhysicsShape(geometry: box, options: nil)
         self.physicsBody = SCNPhysicsBody(type: .dynamic, shape: shape)
         self.physicsBody?.isAffectedByGravity = false
         
